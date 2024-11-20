@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk1yy5ceinfxm"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_4ej6p"]
+[ext_resource type="Texture2D" uid="uid://b2j4jseicqhnc" path="res://PNG/Soldier 1/soldier1_gun.png" id="2_3rtui"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_06rvr"]
+radius = 19.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4ej6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3rtui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, -1)
+shape = SubResource("CircleShape2D_06rvr")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(29, 9)
+target_position = Vector2(800, -5)
